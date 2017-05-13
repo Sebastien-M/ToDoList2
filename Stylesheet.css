@@ -27,6 +27,10 @@ form {
     border-radius: 0px;
     border: none;
 }
+#comment{
+    border-radius: 0px;
+    border: none;
+}
 
 #buttonSubmit {
     border: none;
@@ -104,4 +108,12 @@ button:focus {
 
 #buttonSubmit {
     outline: 0 !important;
+}
+
+*:focus {
+    outline:none !important;
+    }
+
+#buttonSubmit::-moz-focus-inner { 
+  border: 0; 
 }

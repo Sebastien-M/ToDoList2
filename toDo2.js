@@ -1,16 +1,20 @@
 let ul = document.getElementById("ul");
-let saisi = document.getElementById("titre");
 let tableau = [];
+let tableauComment = [];                            //COMMENTAIRE
 
-document.body.querySelector("form").addEventListener('submit', function(e) {
+document.body.querySelector("form").addEventListener('submit', function (e) {
     e.preventDefault();
-
+    let saisi = document.getElementById("titre");
+    let commentaire = document.body.querySelector("#comment").value;
     if (saisi.value === "") {
-        document.body.querySelector("style").innerHTML = "#buttonSubmit{animation-name:red;animation-duration:1s;}#buttonSubmit:hover{background-color:red;animation-name:red;animation-duration:1s;}@keyframes red{from{background-color:red;}to{background-color:white;}}";
+        document.body.querySelector("style").innerHTML = `#buttonSubmit{animation-name:red;animation-duration:1s;}
+                                                          #buttonSubmit:hover{background-color:red;animation-name:red;animation-duration:1s;}
+                                                          @keyframes red{from{background-color:red;}to{background-color:white;}}`;
     } else {
         document.body.querySelector("style").innerHTML = "";
+        tableauComment.push(commentaire);           //COMMENTAIRE
         tableau.push(saisi.value);
-        aff();
+        aff(commentaire);
     }
 
 });
@@ -20,13 +24,14 @@ function aff() {
 
     for (let i = 0; i < tableau.length; i++) {
         let li = document.createElement("li");
-        li.textContent = tableau[i];
+        li.textContent = "Task " + (i + 1) + " : " + tableau[i] + "  Commentaire : " + tableauComment[i];   //COMMENTAIRE
         ul.appendChild(li);
         let buton = document.createElement("button");
         buton.textContent = "Delete";
         li.appendChild(buton);
-        buton.onclick = function() {
+        buton.onclick = function () {
             tableau.splice(i, 1);
+            tableauComment.splice(i, 1);              //COMMENTAIRE
             aff();
         };
     }
