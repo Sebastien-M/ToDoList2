@@ -40,7 +40,7 @@ function aff() {
 
     for (let i = 0; i < tableau.length; i++) {
         let li = document.createElement("li");
-        li.innerHTML = "Task " + (i + 1) + " : " + tableau[i] + "\n" + "Description : " + tableauComment[i];
+        li.innerHTML = "Task " + (i + 1) + " : " + tableau[i] + "<br/> Description : " + tableauComment[i];
         ul.appendChild(li);
         let buton = document.createElement("button");
         buton.textContent = "Delete";

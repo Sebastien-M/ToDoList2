@@ -13,21 +13,41 @@ header {
     padding: 20px;
 }
 
-i {
+#menuBars {
     position: absolute;
     left: 5px;
     transition: 0.3s;
 }
 
-i:hover {
+#menuBars:hover {
     color: #1C254C;
 }
 
 .sideMenu {
     width: 0%;
     height: 100vh;
-    position: fixed;
     background-color: #1C254C;
+    position: absolute;
+}
+
+.fa-plus-square-o {
+    height: 19px;
+    width: 19px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.menulist {
+    display: flex;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.menulist:hover {
+    color: #7a90ff;
+    cursor: pointer;
+    ;
 }
 
 
