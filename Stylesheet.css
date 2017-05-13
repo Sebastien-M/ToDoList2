@@ -13,6 +13,61 @@ header {
     padding: 20px;
 }
 
+i {
+    position: absolute;
+    left: 5px;
+    transition: 0.3s;
+}
+
+i:hover {
+    color: #1C254C;
+}
+
+.sideMenu {
+    width: 0%;
+    height: 100vh;
+    position: fixed;
+    background-color: #1C254C;
+}
+
+
+/* Menu slides */
+
+#menuSlideIn {
+    animation-name: slideIn;
+    animation-duration: 0.4s;
+}
+
+@keyframes slideIn {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 40%;
+    }
+}
+
+#menuSlideOut {
+    animation-name: slideOut;
+    animation-duration: 0.4s;
+}
+
+@keyframes slideOut {
+    from {
+        width: 40%;
+    }
+    to {
+        width: 0%;
+    }
+}
+
+
+/* Menu slides end */
+
+main {
+    padding-top: 20px;
+}
+
 h1 {
     margin: 0;
 }
@@ -27,22 +82,50 @@ form {
     border-radius: 0px;
     border: none;
 }
-#comment{
+
+#comment {
     border-radius: 0px;
     border: none;
 }
 
-#buttonSubmit {
+.buttonAllowed {
     border: none;
     border-radius: 0px;
     transition: 0.3s;
     height: 42px;
+    color: black;
 }
 
-#buttonSubmit:hover {
+.buttonAllowed:hover {
     background-color: #1C1C1C;
     color: white;
 }
+
+
+/* Button Animation */
+
+.buttonDenied {
+    animation-name: red;
+    color: white;
+    animation-duration: 0.3s;
+    border: none;
+    border-radius: 0px;
+    height: 42px;
+}
+
+@keyframes red {
+    0% {
+        background-color: #1C1C1C;
+        color: white;
+    }
+    100% {
+        background-color: red;
+        color: white;
+    }
+}
+
+
+/* Button Animation end */
 
 input {
     height: 40px;
@@ -63,7 +146,7 @@ button:hover {
 }
 
 .buttonInput {
-    width: 50vw;
+    width: 80vw;
     display: flex;
     justify-content: center;
 }
@@ -81,7 +164,7 @@ ul {
 }
 
 li {
-    width: 50vw;
+    width: 80vw;
     display: flex;
     justify-content: space-between;
     list-style: none;
@@ -90,6 +173,8 @@ li {
 }
 
 li * {
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
 }
 
@@ -100,6 +185,8 @@ button {
     transition: 0.3s;
     height: 42px;
     width: 20%;
+    display: flex;
+    justify-content: center;
 }
 
 button:focus {
@@ -111,9 +198,9 @@ button:focus {
 }
 
 *:focus {
-    outline:none !important;
-    }
+    outline: none !important;
+}
 
-#buttonSubmit::-moz-focus-inner { 
-  border: 0; 
+#buttonSubmit::-moz-focus-inner {
+    border: 0;
 }
