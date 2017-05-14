@@ -6,10 +6,13 @@ sideMenuButton.addEventListener("click", function(e) {
     if (nbClick % 2 == 0) {
         document.body.querySelector(".sideMenu").id = 'menuSlideOut';
         document.body.querySelector(".sideMenu").style.width = '0%';
+        document.body.querySelector(".menulist").className = "menulist";
 
     } else {
         document.body.querySelector(".sideMenu").id = 'menuSlideIn';
         document.body.querySelector(".sideMenu").style.width = '40%';
+        document.body.querySelector(".menulist").className = "menulist menulistOn";
+
     }
 
 })
