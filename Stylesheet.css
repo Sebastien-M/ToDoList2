@@ -26,6 +26,7 @@ header {
 .sideMenu {
     width: 0%;
     height: 100%;
+    margin: 0;
     background-color: #1C254C;
     position: absolute;
 }
@@ -40,22 +41,35 @@ header {
 
 .menulist {
     display: none;
-    transition: 0.2s;
+    
 }
 
-.menulist:hover {
+.addcatbutton:hover {
     color: #7a90ff;
     cursor: pointer;
+    transition: 0.2s;
 }
-
-
+.addcatbutton{
+    display: flex;
+}
+.menulistinp{
+    display: none;
+    transition:0.2s;
+    
+}
 /* Menu slides */
 
 .menulistOn {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-
+.menulistinpOn{
+    display: flex;
+    justify-content: center;
+    
+}
 #menuSlideIn {
     animation-name: slideIn;
     animation-duration: 0.4s;
@@ -64,9 +78,11 @@ header {
 @keyframes slideIn {
     from {
         width: 0%;
+        opacity: 0%
     }
     to {
         width: 40%;
+        opacity: 100%;
     }
 }
 
@@ -111,6 +127,7 @@ form {
     border: none;
 }
 
+/* Button Animation */
 .buttonAllowed {
     border: none;
     border-radius: 0px;
@@ -125,8 +142,6 @@ form {
 }
 
 
-/* Button Animation */
-
 .buttonDenied {
     animation-name: red;
     color: white;
@@ -138,10 +153,10 @@ form {
 
 @keyframes red {
     0% {
-        background-color: #1C1C1C;
+        background-color: #1C254C;
         color: white;
     }
-    100% {
+    50% {
         background-color: red;
         color: white;
     }
@@ -153,6 +168,11 @@ form {
 input {
     height: 40px;
     background-color: white;
+}
+#categoryName{
+    border-radius: 0px;
+    border: none;
+    height: 30px;
 }
 
 label {
@@ -186,7 +206,7 @@ ul {
     padding: 0;
 }
 
-li {
+.listAppendMain {
     width: 80vw;
     display: flex;
     justify-content: space-between;
@@ -195,11 +215,7 @@ li {
     font-weight: bolder;
 }
 
-li * {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-}
+
 
 button {
     outline: 0;
